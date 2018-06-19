@@ -3,7 +3,7 @@ import { push } from 'react-router-redux';
 import { Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchCarsRequest } from '../../store/actions/cars';
+import { fetchCarsRequest } from '../../store/actions';
 
 class Home extends React.Component {
 

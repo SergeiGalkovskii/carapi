@@ -7,10 +7,10 @@ export function fetchCars() {
     }
 }
 
-export function receiveCarsSuccess(cars) {
+export function receiveCarsSuccess(items) {
     return {
         type: RECEIVED_CARS_SUCCESS,
-        cars
+        items
     }
 }
 
@@ -39,3 +39,5 @@ export function fetchCarsRequest() {
             .catch(err => receiveCarsError(err));
     }
 }
+
+
