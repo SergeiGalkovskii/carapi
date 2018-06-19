@@ -32,10 +32,7 @@ export function fetchRandomCarRequest() {
                     throw new Error('Error with getting random car');
                 }
             })
-            .then(json => {
-                console.log('js',json);
-                dispatch(receiveRandomCarSuccess(json))
-            })
+            .then(json => dispatch(receiveRandomCarSuccess(json)))
             .catch(err => receiveRandomCarError(err));
     }
 }

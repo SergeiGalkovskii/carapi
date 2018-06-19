@@ -68,7 +68,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changePage: () => dispatch(push('/scores')),
+        changePage: () => dispatch(push('/score')),
         vote: (vote) => dispatch(fetchCarVoteRequest(vote)),
         getRandomCar: () => dispatch(fetchRandomCarRequest()),
         getCars: () => dispatch(fetchCarsRequest()),

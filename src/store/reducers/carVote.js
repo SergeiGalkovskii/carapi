@@ -4,7 +4,7 @@ import {
 } from "../constants/carVotes";
 
 const initialState = {
-    carVotes: {
+    votes: {
         items: [],
         isLoading: false
     },
@@ -18,17 +18,17 @@ const carVoteReducer = (state = initialState, action) => {
         case FETCH_GET_CAR_VOTES:
             return {
                 ...state,
-                carVotes: { ...state.carVotes, isLoading: true }
+                votes: { ...state.votes, isLoading: true }
             };
         case RECEIVED_CAR_VOTES_SUCCESS:
             return {
                 ...state,
-                carVotes: { ...state.carVotes, items: action.items, isLoading: false }
+                votes: { ...state.votes, items: action.items, isLoading: false }
             };
         case RECEIVED_CAR_VOTES_ERROR:
             return {
                 ...state,
-                carVotes: { ...state.carVotes, err: action.carVotes, isLoading: false }
+                votes: { ...state.votes, err: action.err, isLoading: false }
             };
         case FETCH_CAR_VOTE:
             return {
