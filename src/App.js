@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Scores from './pages/scores/Scores';
 import './assets/index.css';
+import 'whatwg-fetch';
 
 const App = () => (
   <div>
