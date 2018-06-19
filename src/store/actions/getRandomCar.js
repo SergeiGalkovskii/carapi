@@ -21,7 +21,7 @@ export function receiveRandomCarError(err) {
     }
 }
 
-export function fetchCarsRequest() {
+export function fetchRandomCarRequest() {
     return dispatch => {
         dispatch(fetchRandomCar());
         return fetch(`${API_URL}/cars/get-random`)
@@ -33,6 +33,7 @@ export function fetchCarsRequest() {
                 }
             })
             .then(json => {
+                console.log('js',json);
                 dispatch(receiveRandomCarSuccess(json))
             })
             .catch(err => receiveRandomCarError(err));

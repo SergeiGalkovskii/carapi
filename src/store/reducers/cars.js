@@ -38,12 +38,12 @@ const carsReducer = (state = initialState, action) => {
         case RECEIVED_RANDOM_CAR_SUCCESS:
             return {
                 ...state,
-                allCars: { ...state.randomCar, item: action.item, isLoading: false }
+                randomCar: { ...state.randomCar, item: action.item, isLoading: false }
             };
         case RECEIVED_RANDOM_CAR_ERROR:
             return {
                 ...state,
-                allCars: { ...state.randomCar, err: action.err, isLoading: false }
+                randomCar: { ...state.randomCar, err: action.err, isLoading: false }
             };
         default:
             return state;

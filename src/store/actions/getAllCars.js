@@ -33,9 +33,7 @@ export function fetchCarsRequest() {
                     throw new Error('Error with getting cars');
                 }
             })
-            .then(json => {
-                dispatch(receiveCarsSuccess(json))
-            })
+            .then(json => dispatch(receiveCarsSuccess(json)))
             .catch(err => receiveCarsError(err));
     }
 }

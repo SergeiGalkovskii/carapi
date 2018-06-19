@@ -23,7 +23,7 @@ export function receiveCarVotesError(err) {
 
 export function fetchCarVotesRequest() {
     return dispatch => {
-        dispatch(fetchCars());
+        dispatch(fetchCarVotes());
         return fetch(`${API_URL}/cars-votes`)
             .then(response => {
                 if (response.ok) {
