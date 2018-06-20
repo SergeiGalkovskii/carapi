@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-
 export class ListCarsComponent extends React.Component {
     render() {
         const {
@@ -9,8 +8,8 @@ export class ListCarsComponent extends React.Component {
 
         const photoComponent = (car) => {
             return (
-                <Col id={car.id} xs={12} lg={3} xl={4}>
-                    <img src={car.imagePath} height="120" width="120" />
+                <Col id={car.id} xs={12} lg={4} xl={6} className='d-flex flex-column car-cortainer p-3'>
+                    <div style={{ backgroundImage: `url(${car.imagePath})`, height: '100%' }} className="list_img" />
                 </Col>
             );
         }

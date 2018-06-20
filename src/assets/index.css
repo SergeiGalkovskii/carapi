@@ -6284,3 +6284,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   height: 100vh; }
+
+.car-cortainer {
+  height: 250px; }
+
+.list_img {
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-bottom: 4px solid #ffc107; }

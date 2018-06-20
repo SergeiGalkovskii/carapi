@@ -17,9 +17,9 @@ class Score extends React.Component {
     } = this.props;
 
     const votesComponent = (vote) => {
-      return <Col xs={12} key={vote.userKey}>
-        <h3>{vote.userKey}</h3>
-        <ListCarsComponent cars={[vote.car]} />
+      return <Col xs={12} key={vote.userKey} className='p-3'>
+        <h3>{vote.userKey} - {vote.isLike ? 'Yes' : 'No'}</h3>
+        <img src={vote.car.imagePath} className='w-100'/>
       </Col>
     };
 

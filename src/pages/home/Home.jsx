@@ -38,11 +38,11 @@ class Home extends React.Component {
 
         }
         return <Container>
-            <Row>
+            <Row className="mb-3">
                 <Col xs={12} className="mb-3">
                     {randomPhoto(car)}
                 </Col>
-                <Col xs={12} className="d-flex flex-wrap">
+                <Col xs={12} className="d-flex flex-wrap px-0">
                     <Col xs={4}>
                         <Button color="success" className="w-100" onClick={() => this.onVoting(true, car.id)}>Love it</Button>
                     </Col>
