@@ -8,10 +8,9 @@ export function fetchCarVote() {
     }
 }
 
-export function carVoteSuccess(items) {
+export function carVoteSuccess() {
     return {
-        type: VOTE_CAR_SUCCESS,
-        items
+        type: VOTE_CAR_SUCCESS
     }
 }
 
@@ -25,17 +24,16 @@ export function carVoteError(err) {
 export function fetchCarVoteRequest(vote) {
     return dispatch => {
         dispatch(fetchCarVote());
-        return fetch(`${API_URL}/cars-votes?userKey=${vote.userKey}&carId=${vote.carId}&isLike=${vote.isLike}`)
+        return fetch(`${API_URL}/cars-votes?userKey=${vote.userKey}&carId=${vote.carId}&isLike=${vote.isLike}`, {
+            method: 'POST'
+        })
             .then(response => {
                 if (response.ok) {
-                    return response.json();
+                    dispatch(carVoteSuccess());
+                    dispatch(fetchRandomCarRequest());
                 } else {
                     throw new Error('Error with voting');
                 }
-            })
-            .then(json => {
-                dispatch(carVoteSuccess(json));
-                dispatch(fetchRandomCarRequest());
             })
             .catch(err => carVoteError(err));
     }
